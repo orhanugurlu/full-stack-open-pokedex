@@ -38,7 +38,7 @@ jobs:
         heroku_app_name: "fullstackopen-cicd"
         heroku_email: "orhan.ugurlu@gmail.com"
         healthcheck: "https://fullstackopen-cicd.herokuapp.com/health"
-        checkstring: "ok"
+        checkstring: "string_to_fail"
         rollbackonhealthcheckfailed: true
     - uses: actions/checkout@v2
       if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip')}}
